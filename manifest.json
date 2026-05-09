@@ -1,0 +1,32 @@
+{
+  "name": "JAIDEE Market — จองล็อคขายของ",
+  "short_name": "JAIDEE",
+  "description": "ระบบจองล็อคขายของตลาดเฮียแชมป์",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#DC2626",
+  "theme_color": "#DC2626",
+  "lang": "th",
+  "icons": [
+    {
+      "src": "icon.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

@@ -15,8 +15,11 @@
 
   <link rel="manifest" href="manifest.json">
   <link rel="apple-touch-icon" sizes="180x180" href="icon.png">
+  <link rel="apple-touch-icon" sizes="192x192" href="icon.png">
+  <link rel="apple-touch-icon" sizes="512x512" href="icon.png">
   <link rel="icon" type="image/png" sizes="192x192" href="icon.png">
   <link rel="icon" type="image/png" sizes="512x512" href="icon.png">
+  <link rel="shortcut icon" href="icon.png">
 
   <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;600;700;800&display=swap" rel="stylesheet">
 
@@ -34,132 +37,68 @@
       padding-top: max(24px, env(safe-area-inset-top));
       padding-bottom: max(24px, env(safe-area-inset-bottom));
     }
-    .container {
-      max-width: 420px;
-      width: 100%;
-      text-align: center;
-    }
+    .container { max-width: 420px; width: 100%; text-align: center; }
     .logo {
-      width: 132px;
-      height: 132px;
-      margin: 0 auto 20px;
+      width: 132px; height: 132px;
+      margin: 0 auto 16px;
       border-radius: 28px;
       box-shadow: 0 12px 32px rgba(0,0,0,0.25);
-      background: white;
-      padding: 8px;
+      background: white; padding: 8px;
       display: block;
     }
-    h1 {
-      color: white;
-      font-size: 38px;
-      font-weight: 800;
-      margin: 0 0 4px;
-      letter-spacing: 3px;
-      line-height: 1;
+    h1 { color: white; font-size: 38px; font-weight: 800; margin: 0 0 4px; letter-spacing: 3px; line-height: 1; }
+    .tagline { color: rgba(255,255,255,0.95); font-size: 14px; letter-spacing: 4px; font-weight: 700; margin-bottom: 24px; }
+    .tagline::before, .tagline::after { content: '—'; margin: 0 10px; opacity: .7; }
+
+    .card {
+      background: white; border-radius: 16px; padding: 18px 20px; margin-bottom: 14px;
+      text-align: left; box-shadow: 0 8px 20px rgba(0,0,0,0.12);
     }
-    .tagline {
-      color: rgba(255,255,255,0.95);
-      font-size: 14px;
-      letter-spacing: 4px;
-      font-weight: 700;
-      margin-bottom: 28px;
-    }
-    .tagline::before, .tagline::after {
-      content: '—';
-      margin: 0 10px;
-      opacity: .7;
-    }
-    .info-card {
-      background: white;
-      border-radius: 16px;
-      padding: 18px 20px;
-      margin-bottom: 18px;
-      text-align: left;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-    }
-    .info-card h2 {
-      color: #DC2626;
-      font-size: 16px;
-      font-weight: 700;
-      margin: 0 0 6px;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-    .info-card p {
-      color: #4B5563;
-      font-size: 13px;
-      line-height: 1.5;
-      margin: 0 0 12px;
-    }
-    .market-days {
-      display: flex;
-      gap: 8px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-    .day-pill {
-      background: #FEE2E2;
-      color: #991B1B;
-      padding: 6px 14px;
-      border-radius: 999px;
-      font-size: 13px;
-      font-weight: 700;
-    }
+    .card h2 { color: #DC2626; font-size: 16px; font-weight: 700; margin: 0 0 8px; }
+    .card p { color: #4B5563; font-size: 13px; line-height: 1.55; margin: 0 0 8px; }
+    .card ol { color: #4B5563; font-size: 13px; line-height: 1.6; margin: 6px 0; padding-left: 22px; }
+    .card ol li { margin-bottom: 4px; }
+
+    .market-days { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; margin-top: 6px; }
+    .day-pill { background: #FEE2E2; color: #991B1B; padding: 6px 14px; border-radius: 999px; font-size: 13px; font-weight: 700; }
+
     .btn {
-      display: block;
-      width: 100%;
-      padding: 16px;
-      border-radius: 12px;
-      font-size: 17px;
-      font-weight: 700;
-      text-decoration: none;
-      text-align: center;
-      margin-bottom: 10px;
-      transition: transform .1s;
-      border: none;
-      cursor: pointer;
-      font-family: inherit;
+      display: block; width: 100%; padding: 16px;
+      border-radius: 12px; font-size: 17px; font-weight: 700;
+      text-decoration: none; text-align: center;
+      margin-bottom: 10px; transition: transform .1s, opacity .3s;
+      border: none; cursor: pointer; font-family: inherit;
     }
     .btn:active { transform: scale(0.97); }
-    .btn-primary {
-      background: white;
-      color: #DC2626;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.18);
-    }
+    .btn-primary { background: white; color: #DC2626; box-shadow: 0 8px 20px rgba(0,0,0,0.18); }
+    .btn-primary.loading { opacity: .55; cursor: wait; pointer-events: none; }
     .btn-secondary {
-      background: rgba(255,255,255,0.18);
-      color: white;
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
+      background: rgba(255,255,255,0.18); color: white;
+      backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
       border: 1px solid rgba(255,255,255,0.25);
     }
-    .footer {
-      color: rgba(255,255,255,0.85);
-      font-size: 12px;
-      margin-top: 22px;
-      line-height: 1.6;
+    .btn-install {
+      background: #16A34A; color: white;
+      box-shadow: 0 8px 20px rgba(22,163,74,0.3);
+      animation: pulse 2s ease-in-out infinite;
     }
-    .install-hint {
-      background: rgba(255,255,255,0.12);
-      border: 1px dashed rgba(255,255,255,0.4);
-      color: white;
-      padding: 10px 14px;
-      border-radius: 10px;
-      font-size: 12px;
-      margin-top: 18px;
-      line-height: 1.5;
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 8px 20px rgba(22,163,74,0.3); }
+      50% { box-shadow: 0 8px 28px rgba(22,163,74,0.6); }
     }
+
+    .footer { color: rgba(255,255,255,0.85); font-size: 12px; margin-top: 18px; line-height: 1.6; }
+    .countdown { color: rgba(255,255,255,0.7); font-size: 12px; margin-top: 8px; }
+    .hide { display: none !important; }
   </style>
 </head>
 <body>
   <div class="container">
     <img src="icon.png" alt="JAIDEE Market" class="logo">
-
     <h1>JAIDEE</h1>
     <div class="tagline">MARKET</div>
 
-    <div class="info-card">
+    <div class="card">
       <h2>🛒 ระบบจองล็อคขายของ</h2>
       <p>เลือกล็อคที่ต้องการได้เอง จองครั้งเดียวใช้ได้ทุกวันตลาดในรอบนั้น</p>
       <div class="market-days">
@@ -169,24 +108,136 @@
       </div>
     </div>
 
-    <a href="https://script.google.com/macros/s/AKfycbygsfi9BosYSUgG_Oah2rNK01o1dNBZRybYhVPa0iONM64r8PFDtfdd6FnN94NJPmu8/exec"
-       class="btn btn-primary">
-      🛒 เริ่มจองเลย
+    <!-- ===== กล่องสอนติดตั้ง: แสดงเฉพาะตอนเปิดผ่าน browser (ยังไม่ติดตั้ง) ===== -->
+    <div id="install-section" class="card hide">
+      <h2>📱 ขั้นตอนติดตั้งบนหน้าโฮม</h2>
+      <p id="install-instructions"></p>
+    </div>
+
+    <!-- ปุ่มติดตั้ง (เด้งเฉพาะ Android Chrome ที่รองรับ) -->
+    <button id="install-btn" class="btn btn-install hide" type="button">
+      ⬇️ ติดตั้งแอปบนเครื่อง
+    </button>
+
+    <!-- ปุ่มเริ่มจอง: ถูก disable ชั่วคราวให้ manifest โหลดทัน -->
+    <a id="booking-btn"
+       href="https://script.google.com/macros/s/AKfycbygsfi9BosYSUgG_Oah2rNK01o1dNBZRybYhVPa0iONM64r8PFDtfdd6FnN94NJPmu8/exec"
+       class="btn btn-primary loading">
+      <span id="btn-text">🛒 พร้อมในอีก 4 วินาที...</span>
     </a>
 
     <a href="https://line.me/ti/p/~papajearming" class="btn btn-secondary">
       💬 ติดต่อแอดมิน (เฮียแชมป์)
     </a>
 
-    <div class="install-hint">
-      💡 <strong>กดบันทึกหน้านี้ลงหน้าจอหลัก</strong><br>
-      เพื่อใช้งานง่ายเหมือนแอป — เปิดได้ทันทีไม่ต้องค้นลิงก์
-    </div>
-
     <div class="footer">
-      © JAIDEE Market<br>
-      ตลาดนัดเฮียแชมป์
+      © JAIDEE Market — ตลาดนัดเฮียแชมป์
     </div>
   </div>
+
+  <script>
+    /* ============================================================
+     * ตรวจสภาพเครื่อง + แพลตฟอร์ม
+     * ============================================================ */
+    const ua = navigator.userAgent || '';
+    const isStandalone =
+      window.matchMedia('(display-mode: standalone)').matches ||
+      window.navigator.standalone === true;
+    const isIOS  = /iPad|iPhone|iPod/.test(ua);
+    const isAndroid = /Android/.test(ua);
+    const isChrome = /Chrome/.test(ua) && !/Edg|OPR/.test(ua);
+    const isSafari = /Safari/.test(ua) && !/Chrome|CriOS|FxiOS/.test(ua);
+    const isLineApp = /Line/.test(ua);
+    const isInIOSChrome = isIOS && /CriOS/.test(ua);
+
+    /* ============================================================
+     * ลงทะเบียน Service Worker (สำคัญ — ทำให้ Chrome ยอมรับเป็น PWA)
+     * ============================================================ */
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('sw.js').catch(() => {});
+      });
+    }
+
+    /* ============================================================
+     * แสดงคำแนะนำติดตั้งตามแพลตฟอร์ม
+     * ============================================================ */
+    function showInstallInstructions() {
+      const sec = document.getElementById('install-section');
+      const txt = document.getElementById('install-instructions');
+      let msg;
+      if (isLineApp) {
+        msg = 'คุณกำลังเปิดในไลน์ — กดเมนู <strong>⋮</strong> มุมขวาบน → "เปิดในเบราว์เซอร์" ก่อน แล้วค่อยติดตั้ง';
+      } else if (isInIOSChrome) {
+        msg = '⚠️ Chrome บน iPhone ไม่รองรับการติดตั้ง — ก๊อปลิงก์นี้ไปเปิดใน <strong>Safari</strong> แล้วกดปุ่มแชร์ ⇧ → "เพิ่มไปยังหน้าจอเริ่มต้น"';
+      } else if (isIOS) {
+        msg = '<ol><li>กดปุ่มแชร์ <strong>⇧</strong> ด้านล่าง</li><li>เลื่อนลง → "เพิ่มไปยังหน้าจอเริ่มต้น"</li><li>ตั้งชื่อ "JAIDEE" → กดเพิ่ม</li></ol>';
+      } else if (isAndroid && isChrome) {
+        msg = '<ol><li>รอปุ่ม <strong>"⬇️ ติดตั้งแอปบนเครื่อง"</strong> สีเขียวด้านล่าง</li><li>หรือกดเมนู <strong>⋮</strong> ขวาบน → "ติดตั้งแอป" / "เพิ่มในหน้าจอหลัก"</li></ol>';
+      } else if (isAndroid) {
+        msg = '<ol><li>กดเมนู <strong>⋮</strong> ขวาบนของเบราว์เซอร์</li><li>เลือก "เพิ่มในหน้าจอหลัก"</li></ol>';
+      } else {
+        msg = 'เปิดลิงก์นี้บนมือถือเพื่อติดตั้งเป็นแอป';
+      }
+      txt.innerHTML = msg;
+      sec.classList.remove('hide');
+    }
+
+    if (!isStandalone) showInstallInstructions();
+
+    /* ============================================================
+     * รอ 4 วินาทีค่อย enable ปุ่มเริ่มจอง
+     * (ให้ Chrome อ่าน manifest + register service worker เสร็จก่อน
+     *  เพื่อกัน "ไอคอน G" เวลา Add to Home Screen)
+     * ถ้าเปิดจาก standalone (ติดตั้งแล้ว) ไม่ต้องรอ
+     * ============================================================ */
+    const btn = document.getElementById('booking-btn');
+    const btnText = document.getElementById('btn-text');
+
+    if (isStandalone) {
+      btn.classList.remove('loading');
+      btnText.textContent = '🛒 เริ่มจองเลย';
+    } else {
+      let secLeft = 4;
+      const tick = () => {
+        if (secLeft <= 0) {
+          btn.classList.remove('loading');
+          btnText.textContent = '🛒 เริ่มจองเลย';
+          return;
+        }
+        btnText.textContent = '🛒 พร้อมในอีก ' + secLeft + ' วินาที...';
+        secLeft--;
+        setTimeout(tick, 1000);
+      };
+      tick();
+    }
+
+    /* ============================================================
+     * beforeinstallprompt — Android Chrome เด้งปุ่มติดตั้งให้ผู้ใช้กดตรงหน้านั้น
+     * ============================================================ */
+    let deferredPrompt = null;
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault();
+      deferredPrompt = e;
+      const ib = document.getElementById('install-btn');
+      ib.classList.remove('hide');
+      ib.onclick = async () => {
+        if (!deferredPrompt) return;
+        deferredPrompt.prompt();
+        const choice = await deferredPrompt.userChoice;
+        deferredPrompt = null;
+        if (choice && choice.outcome === 'accepted') {
+          ib.classList.add('hide');
+        }
+      };
+    });
+
+    window.addEventListener('appinstalled', () => {
+      const ib = document.getElementById('install-btn');
+      const sec = document.getElementById('install-section');
+      if (ib) ib.classList.add('hide');
+      if (sec) sec.classList.add('hide');
+    });
+  </script>
 </body>
 </html>
